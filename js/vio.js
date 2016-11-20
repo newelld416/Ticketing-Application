@@ -10,7 +10,6 @@ $("#speechButton").click( function()
    }
 );
 
-
 function startListening(event) {
 
 	if (!('webkitSpeechRecognition' in window)) {
@@ -33,7 +32,6 @@ function startListening(event) {
 
 	  recognition.onstart = function() {
 		   $('#feedback').html("Capturing");
-		    	alert ("here1");
 	  }
 	  recognition.onresult = function(event) {
 		var interim_transcript = '';
@@ -45,32 +43,38 @@ function startListening(event) {
 		  }
 		}
 		
-		
-		if((final_transcript.includes("buy") || final_transcript.includes("purchase"))&& final_transcript.includes("tickets") ){
-			
-			alert("Great, let's buy some movie tickets!");
+		if (!(final_transcript.includes("stop") || final_transcript.includes("cancel"))){
+			if((final_transcript.includes("buy") || final_transcript.includes("purchase"))&& final_transcript.includes("tickets") ){
+				
+				console.log("Great, let's buy some movie tickets!");
+				sleep(100);
+				  
+			}else{
+				console.log("Sorry, I catch what you said, I heard: \n" + final_transcript+ "\n Try saying something like \"Buy tickets\"");
+				sleep(100);
+			}
 			
 		}else{
-			alert ("Sorry, I catch what you said, I heard: /n" + final_transcript+ "/n Try saying something like \"Buy tickets\"");
-			recognition.start();
+			recognition.stop();
+			console.log("Stopping speech recognition.");
 		}
 		
-		
-		
-		$("#feedback").text(final_transcript);
-		//final_transcript = capitalize(final_transcript);
-		//final_span.innerHTML = linebreak(final_transcript);
-		//interim_span.innerHTML = linebreak(interim_transcript);
 	  };
 	
-	  //recognition.onerror = function(event) { ... }
+	  recognition.onerror = function(event) {
+		console.log("Error");
+	  }
 	  recognition.onend = function() { 
 		
-		if (final_transcript.includes("stop listening")){
-			return true;
+		if (final_transcript.includes("stop") || final_transcript.includes("cancel")){
+			console.log("Stopping speech recognition.");
+			recognition.stop();
+		}else{
+			sleep(100);
+			recognition.start();
+	
+			final_transcript = '';
 		}
-			sleep(1000);
-			//recognition.start();
 	  }
 
 	}
