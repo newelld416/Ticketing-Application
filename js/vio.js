@@ -1,10 +1,12 @@
 
-$("#speechButton").click( function()
-   {
-	startListening();
-	 
-   }
-);
+$("#speechButton").click( function() { startListening(); } );
+
+$( "#searchInput" ).keydown(function() {
+  	var e = window.event;
+	if(e.keyCode == 13){ 
+		alert('5'); 
+	}
+});
 
 function startListening(event) {
 
@@ -13,8 +15,6 @@ function startListening(event) {
 	} else {
 	
 		var final_transcript = '';
-		 
-		$('#feedback').html("Talk to me");
 
 		var recognition = new webkitSpeechRecognition();
 		recognition.lang = 'en-US';
@@ -28,51 +28,57 @@ function startListening(event) {
 
 
 		recognition.onstart = function() {
-			console.log("Capturing");
+			var text = $("#speechOutput").text();
+			if (!text.includes("What would you like to do?")) {
+				addToSpeechLog("What would you like to do?");
+			}
 		}
 		
 		recognition.onresult = function(event) {
-			var interim_transcript = '';
-			for (var i = event.resultIndex; i < event.results.length; ++i) {
-				if (event.results[i].isFinal) {
-					final_transcript += event.results[i][0].transcript;
-				}else {
-					interim_transcript += event.results[i][0].transcript;
+			//Want to make sure the system has some confidence in the result before we take action
+			if (event.results[0][0].confidence >= .6) {
+				var interim_transcript = '';
+				for (var i = event.resultIndex; i < event.results.length; ++i) {
+					if (event.results[i].isFinal) {
+						final_transcript += event.results[i][0].transcript;
+					}else {
+						interim_transcript += event.results[i][0].transcript;
+					}
+				}
+
+				if(final_transcript.toLowerCase().includes("buy") || final_transcript.toLowerCase().includes("purchase")){
+					addToSpeechLog("You said " + final_transcript);
+					sleep(100);
+				} else if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")){
+					recognition.stop();
+				} else {
+					addToSpeechLog("Sorry, that is not a command I know, I heard: " + final_transcript);
+					addToSpeechLog("Try saying something like but tickets.");
+					sleep(200);
 				}
 			}
-			
-			if (!(final_transcript.includes("stop") || final_transcript.includes("cancel"))){
-				if((final_transcript.includes("buy") || final_transcript.includes("purchase")) && final_transcript.includes("tickets") ){
-					console.log("Great, let's buy some movie tickets!");
-					sleep(100);
-				}else{
-					console.log("Sorry, I catch what you said, I heard: \n" + final_transcript+ "\n Try saying something like \"Buy tickets\"");
-					sleep(100);
-				}
-				
-			}else{
-				recognition.stop();
-				console.log("Stopping speech recognition.");
-			}
-			
 		}
 		
 		recognition.onerror = function(event) {
-			console.log("Error");
+			addToSpeechLog("Error");
 		}
 		  
-		recognition.onend = function() { 
-			
-			if (final_transcript.includes("stop") || final_transcript.includes("cancel")){
-				console.log("Stopping speech recognition.");
+		recognition.onend = function() {
+			if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")) {
+				addToSpeechLog("Stopping speech recognition.");
 				recognition.stop();
-			}else{
+			} else {
 				sleep(100);
 				recognition.start();
 				final_transcript = '';
 			}
 		}
 	}
+}
+
+function addToSpeechLog(message) {
+	var text = $("#speechOutput").html();
+	$("#speechOutput").html(text + "<br>" + message);
 }
 
 
