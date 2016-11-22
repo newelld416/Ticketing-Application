@@ -4,7 +4,7 @@ $("#speechButton").click( function() { startListening(); } );
 $( "#searchInput" ).keydown(function() {
   	var e = window.event;
 	if(e.keyCode == 13){ 
-		alert('5'); 
+		addToSpeechLog($("#searchInput")[0].value, "Let me see if we have that movie.", false);
 	}
 });
 
@@ -28,10 +28,10 @@ function startListening(event) {
 
 
 		recognition.onstart = function() {
-			var text = $("#speechOutput").text();
-			if (!text.includes("What would you like to do?")) {
-				addToSpeechLog("What would you like to do?");
-			}
+			// var text = $("#speechOutput").text();
+			// if (!text.includes("What would you like to do?")) {
+			// 	addToSpeechLog("", "What would you like to do?");
+			// }
 		}
 		
 		recognition.onresult = function(event) {
@@ -47,25 +47,30 @@ function startListening(event) {
 				}
 
 				if(final_transcript.toLowerCase().includes("buy") || final_transcript.toLowerCase().includes("purchase")){
-					addToSpeechLog("You said " + final_transcript);
+					//We should do something to allow the user to buy tickets here
+					addToSpeechLog(final_transcript, "Awesome, lets get you some tickets", true);
 					sleep(100);
 				} else if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")){
+					//Speech recognition is done at this point
 					recognition.stop();
+				} else if (final_transcript.includes("help")){
+					//We should give the user a list of good commands they can use here
 				} else {
-					addToSpeechLog("Sorry, that is not a command I know, I heard: " + final_transcript);
-					addToSpeechLog("Try saying something like but tickets.");
+					//The user said a command we did not plan for 
+					addToSpeechLog(final_transcript, "Sorry, that is not a command I know", true);
 					sleep(200);
 				}
 			}
 		}
 		
 		recognition.onerror = function(event) {
+			//An error has occured
 			addToSpeechLog("Error");
 		}
 		  
 		recognition.onend = function() {
 			if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")) {
-				addToSpeechLog("Stopping speech recognition.");
+				addToSpeechLog(final_transcript, "Stopping audio recognition", true);
 				recognition.stop();
 			} else {
 				sleep(100);
@@ -76,9 +81,15 @@ function startListening(event) {
 	}
 }
 
-function addToSpeechLog(message) {
-	var text = $("#speechOutput").html();
-	$("#speechOutput").html(text + "<br>" + message);
+function addToSpeechLog(userMessage, computerMessage, isSpeech) {
+	var element = $("#speechOutput");
+	if (isSpeech){
+		element.html("You said: " + userMessage);
+	} else {
+		element.html("You searched for: " + userMessage);
+	}
+	
+	element.html(element.html() + "<br>" + computerMessage);
 }
 
 
