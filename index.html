@@ -498,52 +498,140 @@
             </div>
 		<div class="container">
             <div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
+				<div class="">
+					<div class="modal-body container">
 						<h2>Locations</h2>
 						<p>Select one of our great locaitons to visit.</p>
-						<section class ="col-sm-4">
-							<h3>Celebration Ciminia South</h3>
-							<hr class="star-primary">
-							<img src="img/movie_locations/cbs.jfif" class="img-responsive img-centered" alt="">
-							<p> <b>Visit our loctation in Wyoming, MI</p>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
-						</section>
-						<section class ="col-sm-4">
-							<h3>Celebration Ciminia North</h3>
-							<hr class="star-primary">
-							<img src="img/movie_locations/cbnorth.jfif" class="img-responsive img-centered" alt="">
-							<p> <b>Visit our remodled Grand Rapids Location!</p>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
-						</section>
-						<section class ="col-sm-4">
-							<h3>Movies AMC</h3>
-							<hr class="star-primary">
-							<img src="img/movie_locations/849.jpg" class="img-responsive img-centered" alt="">
-							<p> <b>Visit the beautiful Movies AMC location in downtown Kalamazoo! </b></p>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
-						</section>
-						<section class ="col-sm-4">
-							<h3>Country Movies</h3>
-							<hr class="star-primary">
-							<img src="img/movie_locations/old-style-movie-theater.jpg" class="img-responsive img-centered" alt="">
-							<p> <b>Visit our old fashioned country movie theater in South Haven MI!</p>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
-						</section>
+						<div class="row">
+							<section class ="col-lg-6 portfolio-item" style="height:500px">
+								<h3>Celebration Ciminia South</h3>
+								<hr class="star-primary">
+								<img src="img/movie_locations/cbs.jfif" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
+								<p> <b>Visit our loctation in Wyoming!</p>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
+							</section>
+							<section class ="col-sm-6 portfolio-item" style="height:500px" >
+								<h3>Celebration Ciminia North</h3>
+								<hr class="star-primary">
+								<img src="img/movie_locations/cbnorth.jfif" class="img-responsive img-centered" style = "max-height: 200px"   alt="">
+								<p> <b>Visit our remodled Grand Rapids Location!</p>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
+							</section>
+							<section class ="col-sm-6 portfolio-item" style="height:500px">
+								<h3>Movies AMC</h3>
+								<hr class="star-primary">
+								<img src="img/movie_locations/849.jpg" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
+								<p> <b>Visit the beautiful Movies AMC location in downtown Kalamazoo! </b></p>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Purchase Tickets</button>
+							</section>
+							<section class ="col-lg-6 portfolio-item" style="height:500px">
+								<h3>Country Movies</h3>
+								<hr class="star-primary">
+								<img src="img/movie_locations/old-style-movie-theater.jpg" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
+								<p> <b>Visit our old fashioned country movie theater in South Haven MI!</p>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Directions</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal"></i>Back to Browse</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" href="#movieTimes" data-toggle="modal"></i>Purchase Tickets</button>
+							</section>
+						</div>
                     </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+	<div class="portfolio-modal modal fade" id="movieTimes" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+			 <section id="portfolio">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h2>Movie Times - Today</h2>
+							<hr class="star-primary">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 portfolio-item" style="height:300px">
+							<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/harry_potter.jpeg" class="img-responsive" alt="">
+								<p style="font-color:black">9:30 AM</p>	
+							</a>
+						</div>
+						<div class="col-sm-4 portfolio-item" style="height:300px">
+							<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/django.jpeg" class="img-responsive" alt="">
+							</a>
+						</div>
+						<div class="col-sm-4 portfolio-item" style="height:300px">
+							<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/captain_america.jpeg" class="img-responsive" alt="">
+							</a>
+						</div>
+						<div class="col-sm-4 portfolio-item" style="height:300px">
+							<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/ghost_busters.jpeg" class="img-responsive" alt="">
+							</a>
+						</div>
+						<div class="col-sm-4 portfolio-item" style="height:300px">
+							<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/star_wars.jpeg" class="img-responsive" alt="">
+							</a>
+						</div>
+						<div class="col-sm-4 portfolio-item" style="height:280px">
+							<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+								<div class="caption">
+									<div class="caption-content">
+										<i class="fa fa-search-plus fa-3x"></i>
+									</div>
+								</div>
+								<img src="img/movie_posters/finding_nemo.jpeg" class="img-responsive" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+        </div>
+    </div>
+	
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
