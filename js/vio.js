@@ -62,11 +62,16 @@ function startListening(event) {
 					recognition.stop();
 				} else if (final_transcript.includes("help")){
 					//We should give the user a list of good commands they can use here
+				} else if (processSearch(final_transcript)){
+					
 				} else {
 					//The user said a command we did not plan for 
 					addToSpeechLog(final_transcript, "Sorry, that is not a command I know", true);
 					sleep(200);
 				}
+			}else{
+				//don't do an alert, or it will popup constantly...
+				//alert("I was unable to understand what you said, please try again.");
 			}
 		}
 		
@@ -116,40 +121,71 @@ function processSearch(inputValue ) {
 	//movies
 	if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		
-	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo"){
+		$("#selectedMovie").text("potter");
+		return true;
+	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
 		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
-	}else if(inputValue.toLowerCase().includes("captin") && inputValue.toLowerCase().includes("america"){
-		addToSpeechLog(inputValue, "great - Captin America.", false);
-	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained"){
+		$("#selectedMovie").text("nemo");
+		return true;
+	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
+		addToSpeechLog(inputValue, "great - Captian America.", false);
+		$("#selectedMovie").text("ca");
+		return true;
+	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
 		addToSpeechLog(inputValue, "great - django", false);
-	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens"){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("goast") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("goastbusters") {
-		
-	addToSpeechLog(inputValue, "great - Goastbusters.", false);
+		$("#selectedMovie").text("django");
+		return true;
+	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
+		addToSpeechLog(inputValue, "great - Star Wars.", false);
+		$("#selectedMovie").text("starWars");
+		return true;
+	}else if(inputValue.toLowerCase().includes("goast") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("goastbusters")) {
+		addToSpeechLog(inputValue, "great - Goastbusters.", false);
+		$("#selectedMovie").text("ghost");
+		return true;
 	}
 	//locations
-	else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
+	else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("north")){
+		addToSpeechLog(inputValue, "great -Location North.", false);
+		$("#selectedTheater").text("cbn");
+		return true;
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("south")){
+		addToSpeechLog(inputValue, "great - Location South.", false);
+		$("#selectedTheater").text("cbs");
+		return true;
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("east")){
+		addToSpeechLog(inputValue, "great - Location East.", false);
+		$("#selectedTheater").text("cbe");
+		return true;
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("west")){
+		addToSpeechLog(inputValue, "great - Location West.", false);
+		$("#selectedTheater").text("cbw");
+		return true;
+	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("country")){
+		addToSpeechLog(inputValue, "great - Location Country.", false);
+		$("#selectedTheater").text("cc");
+		return true;
+	}else if(inputValue.toLowerCase().includes("acm") && inputValue.toLowerCase().includes("18")){
+		addToSpeechLog(inputValue, "great - Location ACM.", false);
+		$("#selectedTheater").text("acmgr18");
+		return true;
 	}
 	//actors
-	else if(inputValue.toLowerCase().includes("david") && inputValue.toLowerCase().includes("yates	"){
+	else if(inputValue.toLowerCase().includes("david") && inputValue.toLowerCase().includes("yates")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("anthony") && inputValue.toLowerCase().includes("russo"){
+		return true;
+	}else if(inputValue.toLowerCase().includes("anthony") && inputValue.toLowerCase().includes("russo")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
+		return true;
+	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
+		return true;
+	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter	"){
+		return true;
+	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter.", false);
+		return true;
 	
 	}
 	//error
