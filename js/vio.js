@@ -120,28 +120,34 @@ function sleep(milliseconds) {
 function processSearch(inputValue ) {
 	//movies
 	if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
+		addToSpeechLog(inputValue, "great - Harry Potter2.", false);
 		$("#selectedMovie").text("potter");
+		$("#portfolioModal1").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
 		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
 		$("#selectedMovie").text("nemo");
+		$("#portfolioModal6").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
 		addToSpeechLog(inputValue, "great - Captian America.", false);
 		$("#selectedMovie").text("ca");
+		$("#portfolioModal3").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
 		addToSpeechLog(inputValue, "great - django", false);
 		$("#selectedMovie").text("django");
+		$("#portfolioModal2").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
 		addToSpeechLog(inputValue, "great - Star Wars.", false);
 		$("#selectedMovie").text("starWars");
+		$("#portfolioModal5").modal('show');
 		return true;
-	}else if(inputValue.toLowerCase().includes("goast") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("goastbusters")) {
-		addToSpeechLog(inputValue, "great - Goastbusters.", false);
+	}else if(inputValue.toLowerCase().includes("ghost") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("ghostbusters")) {
+		addToSpeechLog(inputValue, "great - Ghostbusters.", false);
 		$("#selectedMovie").text("ghost");
+		$("#portfolioModal4").modal('show');
 		return true;
 	}
 	//locations
