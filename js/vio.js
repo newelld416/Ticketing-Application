@@ -15,6 +15,16 @@ $( "#searchInput" ).keydown(function() {
 	}
 });
 
+// Remove selections when user closes modal windows
+$('#selectLocation').on('hidden.bs.modal', function (e) {
+		$("#selectedTheater").text("none");
+});
+
+
+$('.movieSelection').on('hidden.bs.modal', function (e) {
+	 $("#selectedMovie").text("none");
+});
+
 function startListening(event) {
 
 	if (!('webkitSpeechRecognition' in window)) {
@@ -53,11 +63,7 @@ function startListening(event) {
 					}
 				}
 
-				if(final_transcript.toLowerCase().includes("buy") || final_transcript.toLowerCase().includes("purchase")){
-					//We should do something to allow the user to buy tickets here
-					addToSpeechLog(final_transcript, "Awesome, lets get you some tickets", true);
-					sleep(100);
-				} else if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")){
+				if (final_transcript.includes("finished") || final_transcript.includes("stop") || final_transcript.includes("cancel")){
 					//Speech recognition is done at this point
 					recognition.stop();
 				} else if (final_transcript.includes("help")){
@@ -121,32 +127,34 @@ function processSearch(inputValue ) {
 	//movies
 	if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter2.", false);
-		$("#selectedMovie").text("potter");
+		$("#selectedMovie").text("portfolioModal1");
 		$("#portfolioModal1").modal('show');
+		
+		$("#selectMyTickets").val("Harry Potter and the Order of the Phoenix");
 		return true;
 	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
 		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
-		$("#selectedMovie").text("nemo");
+		$("#selectedMovie").text("portfolioModal6");
 		$("#portfolioModal6").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
 		addToSpeechLog(inputValue, "great - Captian America.", false);
-		$("#selectedMovie").text("ca");
+		$("#selectedMovie").text("portfolioModal3");
 		$("#portfolioModal3").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
 		addToSpeechLog(inputValue, "great - django", false);
-		$("#selectedMovie").text("django");
+		$("#selectedMovie").text("portfolioModal2");
 		$("#portfolioModal2").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
 		addToSpeechLog(inputValue, "great - Star Wars.", false);
-		$("#selectedMovie").text("starWars");
+		$("#selectedMovie").text("portfolioModal5");
 		$("#portfolioModal5").modal('show');
 		return true;
 	}else if(inputValue.toLowerCase().includes("ghost") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("ghostbusters")) {
 		addToSpeechLog(inputValue, "great - Ghostbusters.", false);
-		$("#selectedMovie").text("ghost");
+		$("#selectedMovie").text("portfolioModal4");
 		$("#portfolioModal4").modal('show');
 		return true;
 	}
@@ -194,9 +202,20 @@ function processSearch(inputValue ) {
 		return true;
 	
 	}
+	//select a theater page
+	else if (inputValue.toLowerCase().includes("theater")){
+		addToSpeechLog(inputValue, "Showing Selct a theater page.", false);
+			$("#selectLocation").modal('show');
+	}
+	else if (( inputValue.toLowerCase().includes("buy") || (inputValue.toLowerCase().includes("purchase")  )&& inputValue.toLowerCase().includes("tickets") )){
+		addToSpeechLog(inputValue, "Showing Selct a theater page.", false);
+			$("#purchaseTickets").modal('show');
+	}
 	//error
 	else{
 		addToSpeechLog(inputValue, "Unable to process your request.", false);
 	}
 	
 }
+
+
