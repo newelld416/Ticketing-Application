@@ -127,94 +127,104 @@ function processSearch(inputValue ) {
 	//movies
 	if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter2.", false);
+		$("#portfolioModal1").modal('show');
+		
+		$("#selectMyTickets").val("Harry Potter and the Order of the Phoenix");
+		
+	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
+		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
+		$("#portfolioModal6").modal('show');
+		$("#selectMyTickets").val("Finding Nemo");
+		
+	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
+		addToSpeechLog(inputValue, "great - Captian America.", false);
+		$("#portfolioModal3").modal('show');
+		$("#selectMyTickets").val("Captain America");
+		
+	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
+		addToSpeechLog(inputValue, "great - django", false);
+		$("#portfolioModal2").modal('show');
+		$("#selectMyTickets").val("Django Unchained");
+		
+	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
+		addToSpeechLog(inputValue, "great - Star Wars.", false);
+		$("#portfolioModal5").modal('show');
+		$("#selectMyTickets").val("Star Wars: The Force Awakens");
+		
+	}else if(inputValue.toLowerCase().includes("ghost") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("ghostbusters")) {
+		addToSpeechLog(inputValue, "great - Ghostbusters.", false);
+		$("#portfolioModal4").modal('show');
+		$("#selectMyTickets").val("Ghostbusters");
+		
+	}
+	//actors
+	else if(inputValue.toLowerCase().includes("david") && inputValue.toLowerCase().includes("yates")){
+		addToSpeechLog(inputValue, "great - Harry Potter2.", false);
 		$("#selectedMovie").text("portfolioModal1");
 		$("#portfolioModal1").modal('show');
 		
 		$("#selectMyTickets").val("Harry Potter and the Order of the Phoenix");
-		return true;
-	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
+		
+	}else if(inputValue.toLowerCase().includes("stanton") && inputValue.toLowerCase().includes("andrew ")){
 		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
-		$("#selectedMovie").text("portfolioModal6");
 		$("#portfolioModal6").modal('show');
 		$("#selectMyTickets").val("Finding Nemo");
-		return true;
-	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
+		
+	}else if(inputValue.toLowerCase().includes("anthony") && inputValue.toLowerCase().includes("russo")){
 		addToSpeechLog(inputValue, "great - Captian America.", false);
-		$("#selectedMovie").text("portfolioModal3");
 		$("#portfolioModal3").modal('show');
 		$("#selectMyTickets").val("Captain America");
-		return true;
-	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
+		
+	}else if(inputValue.toLowerCase().includes("quentin") && inputValue.toLowerCase().includes("tarantino")){
 		addToSpeechLog(inputValue, "great - django", false);
-		$("#selectedMovie").text("portfolioModal2");
 		$("#portfolioModal2").modal('show');
 		$("#selectMyTickets").val("Django Unchained");
-		return true;
-	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
+		
+	}else if(inputValue.toLowerCase().includes("jj") && inputValue.toLowerCase().includes("abrams")){
 		addToSpeechLog(inputValue, "great - Star Wars.", false);
-		$("#selectedMovie").text("portfolioModal5");
 		$("#portfolioModal5").modal('show');
 		$("#selectMyTickets").val("Star Wars: The Force Awakens");
-		return true;
-	}else if(inputValue.toLowerCase().includes("ghost") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("ghostbusters")) {
+		
+	}else if(inputValue.toLowerCase().includes("paul") && inputValue.toLowerCase().includes("feig")) {
 		addToSpeechLog(inputValue, "great - Ghostbusters.", false);
-		$("#selectedMovie").text("portfolioModal4");
 		$("#portfolioModal4").modal('show');
 		$("#selectMyTickets").val("Ghostbusters");
-		return true;
-	}
-	//locations
-	else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("north")){
-		addToSpeechLog(inputValue, "great -Location North.", false);
-		$("#selectedTheater").text("cbn");
-		$("#purchaseTickets").modal('show');
-		$("#selectMyTheater").val("Celebration Cinema North");
-		return true;
-	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("south")){
-		addToSpeechLog(inputValue, "great - Location South.", false);
-		$("#selectedTheater").text("cbs");
-		$("#purchaseTickets").modal('show');
-		$("#selectMyTheater").val("Celebration Cinema South");
-		return true;
-	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("east")){
-		addToSpeechLog(inputValue, "great - Location East.", false);
-		$("#selectedTheater").text("cbe");
-		$("#selectMyTheater").val("Celebration Cinema East");
-		return true;
-	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("west")){
-		addToSpeechLog(inputValue, "great - Location West.", false);
-		$("#selectedTheater").text("cbw");
-		$("#selectMyTheater").val("Celebration Cinema West");
-		return true;
-	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("country")){
-		addToSpeechLog(inputValue, "great - Location Country.", false);
-		$("#selectedTheater").text("cc");
-		$("#selectMyTheater").val("Country Cinema");
-		return true;
-	}else if(inputValue.toLowerCase().includes("acm") && inputValue.toLowerCase().includes("18")){
-		addToSpeechLog(inputValue, "great - Location ACM.", false);
-		$("#selectedTheater").text("acmgr18");
-		$("#selectMyTheater").val("AMC Grand Rapids 18");
-		return true;
-	}
-	//actors
-	else if(inputValue.toLowerCase().includes("david") && inputValue.toLowerCase().includes("yates")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		return true;
-	}else if(inputValue.toLowerCase().includes("anthony") && inputValue.toLowerCase().includes("russo")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		return true;
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		return true;
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		return true;
-	}else if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
-		addToSpeechLog(inputValue, "great - Harry Potter.", false);
-		return true;
 	
 	}
+	
+	//locations
+	if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("north")){
+		addToSpeechLog(inputValue, "great -Location North.", false);
+		$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema North");
+		
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("south")){
+		addToSpeechLog(inputValue, "great - Location South.", false);
+		$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema South");
+		
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("east")){
+		addToSpeechLog(inputValue, "great - Location East.", false);
+			$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema East");
+		
+	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("west")){
+		addToSpeechLog(inputValue, "great - Location West.", false);
+			$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema West");
+		
+	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("country")){
+		addToSpeechLog(inputValue, "great - Location Country.", false);
+			$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Country Cinema");
+		
+	}else if(inputValue.toLowerCase().includes("acm") && inputValue.toLowerCase().includes("18")){
+		addToSpeechLog(inputValue, "great - Location ACM.", false);
+			$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("AMC Grand Rapids 18");
+		
+	}
+
 	//select a theater page
 	else if (inputValue.toLowerCase().includes("theater")){
 		addToSpeechLog(inputValue, "Showing Selct a theater page.", false);
@@ -227,7 +237,9 @@ function processSearch(inputValue ) {
 	//error
 	else{
 		addToSpeechLog(inputValue, "Unable to process your request.", false);
+		return false;
 	}
+	return true;
 	
 }
 
