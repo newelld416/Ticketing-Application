@@ -167,26 +167,34 @@ function processSearch(inputValue ) {
 	else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("north")){
 		addToSpeechLog(inputValue, "great -Location North.", false);
 		$("#selectedTheater").text("cbn");
+		$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema North");
 		return true;
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("south")){
 		addToSpeechLog(inputValue, "great - Location South.", false);
 		$("#selectedTheater").text("cbs");
+		$("#purchaseTickets").modal('show');
+		$("#selectMyTheater").val("Celebration Cinema South");
 		return true;
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("east")){
 		addToSpeechLog(inputValue, "great - Location East.", false);
 		$("#selectedTheater").text("cbe");
+		$("#selectMyTheater").val("Celebration Cinema East");
 		return true;
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("west")){
 		addToSpeechLog(inputValue, "great - Location West.", false);
 		$("#selectedTheater").text("cbw");
+		$("#selectMyTheater").val("Celebration Cinema West");
 		return true;
 	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("country")){
 		addToSpeechLog(inputValue, "great - Location Country.", false);
 		$("#selectedTheater").text("cc");
+		$("#selectMyTheater").val("Country Cinema");
 		return true;
 	}else if(inputValue.toLowerCase().includes("acm") && inputValue.toLowerCase().includes("18")){
 		addToSpeechLog(inputValue, "great - Location ACM.", false);
 		$("#selectedTheater").text("acmgr18");
+		$("#selectMyTheater").val("AMC Grand Rapids 18");
 		return true;
 	}
 	//actors
