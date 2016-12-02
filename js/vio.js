@@ -136,26 +136,31 @@ function processSearch(inputValue ) {
 		addToSpeechLog(inputValue, "great - Finding Nemo.", false);
 		$("#selectedMovie").text("portfolioModal6");
 		$("#portfolioModal6").modal('show');
+		$("#selectMyTickets").val("Finding Nemo");
 		return true;
 	}else if(inputValue.toLowerCase().includes("captain") && inputValue.toLowerCase().includes("america")){
 		addToSpeechLog(inputValue, "great - Captian America.", false);
 		$("#selectedMovie").text("portfolioModal3");
 		$("#portfolioModal3").modal('show');
+		$("#selectMyTickets").val("Captain America");
 		return true;
 	}else if(inputValue.toLowerCase().includes("django") && inputValue.toLowerCase().includes("unchained")){
 		addToSpeechLog(inputValue, "great - django", false);
 		$("#selectedMovie").text("portfolioModal2");
 		$("#portfolioModal2").modal('show');
+		$("#selectMyTickets").val("Django Unchained");
 		return true;
 	}else if(inputValue.toLowerCase().includes("star") && inputValue.toLowerCase().includes("wars") || inputValue.toLowerCase().includes("force") && inputValue.toLowerCase().includes("awakens")){
 		addToSpeechLog(inputValue, "great - Star Wars.", false);
 		$("#selectedMovie").text("portfolioModal5");
 		$("#portfolioModal5").modal('show');
+		$("#selectMyTickets").val("Star Wars: The Force Awakens");
 		return true;
 	}else if(inputValue.toLowerCase().includes("ghost") && inputValue.toLowerCase().includes("busters") || inputValue.toLowerCase().includes("ghostbusters")) {
 		addToSpeechLog(inputValue, "great - Ghostbusters.", false);
 		$("#selectedMovie").text("portfolioModal4");
 		$("#portfolioModal4").modal('show');
+		$("#selectMyTickets").val("Ghostbusters");
 		return true;
 	}
 	//locations
