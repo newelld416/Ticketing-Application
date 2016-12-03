@@ -457,14 +457,14 @@
 								<hr class="star-primary">
 								<img src="img/movie_locations/cbs.jfif" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
 								<button type="button" class="btn btn-primary" style="margin-right: 10px" data-dismiss="modal" onclick="window.open('https://www.google.com/maps/dir//Celebration!+Cinema+Grand+Rapids+South,+Eastport+Drive,+Grand+Rapids,+MI/@42.8495177,-85.6630803,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x8819b499e52967b9:0x2e1dc1571ac5e030!2m2!1d-85.628061!2d42.849523')"></i>Directions</button>
-								<button type="button" class="btn btn-success" href="#purchaseTickets" data-toggle="modal"></i>Purchase Tickets</button>
+								<button type="button" class="btn btn-success"  onclick="processSearch('Celebration Cinema South');" ><!--href="#purchaseTickets"  data-toggle="modal"> --> </i>Purchase Tickets</button>
 							</section>
 							<section class ="col-sm-6 portfolio-item" style="height:500px" >
 								<h3>Celebration Cinema North</h3>
 								<hr class="star-primary">
 								<img src="img/movie_locations/cbs.jfif" class="img-responsive img-centered" style = "max-height: 200px"   alt="">
 								<button type="button" class="btn btn-primary" style="margin-right: 10px" data-dismiss="modal" onclick="window.open('https://www.google.com/maps/dir//Celebration!+Cinema+Grand+Rapids+North+%26+IMAX,+Celebration+Drive+Northeast,+Grand+Rapids,+MI/@43.0017427,-85.6283373,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x8818534feb598dc3:0x69b4518c7380686c!2m2!1d-85.593318!2d43.001748')"></i>Directions</button>
-								<button type="button" class="btn btn-success" href="#purchaseTickets" data-toggle="modal"></i>Purchase Tickets</button>
+								<button type="button" class="btn btn-success" onclick="processSearch('Celebration Cinema North');"><i>Purchase Tickets<</i>/button>
 							</section>
 						</div>
 						<div class="row">
@@ -473,14 +473,14 @@
 								<hr class="star-primary">
 								<img src="http://media3.picsearch.com/is?VljlLXINk5OshroZN5aUjOGw-LU8--LaeQ-A9UGXmik&height=221" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
 								<button type="button" class="btn btn-primary" style="margin-right: 10px" data-dismiss="modal" onclick="window.open('https://www.google.com/maps/dir//AMC+Grand+Rapids+18,+Alpine+Avenue+Northwest,+Walker,+MI/@43.0184357,-85.7211193,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x8819a954bcc694e5:0xbcabaf3d35d24fef!2m2!1d-85.6861!2d43.018441')"></i>Directions</button>
-								<button type="button" class="btn btn-success" href="#purchaseTickets" data-toggle="modal"></i>Purchase Tickets</button>
+								<button type="button" class="btn btn-success" onclick="processSearch('AMC Grand Rapids 18');"><i>Purchase Tickets<i/></button>
 							</section>
 							<section class ="col-lg-6 portfolio-item" style="height:500px">
 								<h3>Grand Rapids Cinema 8</h3>
 								<hr class="star-primary">
 								<img src="http://manntheatres.com/images/theatre_82.jpg" class="img-responsive img-centered" style = "max-height: 200px"  alt="">
 								<button type="button" class="btn btn-primary" style="margin-right: 10px" data-dismiss="modal" onclick="window.open('https://www.google.com/maps/dir//113+Southeast+21st+Street,+Grand+Rapids,+MN+55744/@47.2108938,-93.5616538,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x52b09027856d31af:0x5b35083d5484532c!2m2!1d-93.5266344!2d47.2108408')"></i>Directions</button>
-								<button type="button" class="btn btn-success" href="#purchaseTickets" data-toggle="modal"></i>Purchase Tickets</button>
+								<button type="button" class="btn btn-success" onclick="processSearch('Grand Rapids Cinema 8');"><i>Purchase Tickets</i></button>
 							</section>
 						</div>
                     </div>
@@ -520,8 +520,6 @@
                                 <option>AMC Grand Rapids 18</option>
                                 <option>Celebration Cinema North</option>
                                 <option>Celebration Cinema South</option>
-                                <option>Celebration Cinema East</option>
-                                <option>Celebration Cinema West</option>
                                 <option>Grand Rapids Cinema 8</option>
                             </select>
                             <input class="form-control" type="date">

@@ -128,7 +128,6 @@ function processSearch(inputValue ) {
 	if(inputValue.toLowerCase().includes("harry") && inputValue.toLowerCase().includes("potter")){
 		addToSpeechLog(inputValue, "great - Harry Potter2.", false);
 		$("#portfolioModal1").modal('show');
-		
 		$("#selectMyTickets").val("Harry Potter and the Order of the Phoenix");
 		
 	}else if(inputValue.toLowerCase().includes("finding") || inputValue.toLowerCase().includes("nemo")){
@@ -199,13 +198,13 @@ function processSearch(inputValue ) {
 		$("#selectMyTheater").val("Celebration Cinema North");
 		
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("south")){
-		addToSpeechLog(inputValue, "great - Location South.", false);
+		//addToSpeechLog(inputValue, "great - Location South.", false);
 		$("#purchaseTickets").modal('show');
 		$("#selectMyTheater").val("Celebration Cinema South");
 		
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("east")){
 		addToSpeechLog(inputValue, "great - Location East.", false);
-			$("#purchaseTickets").modal('show');
+		$("#purchaseTickets").modal('show');
 		$("#selectMyTheater").val("Celebration Cinema East");
 		
 	}else if(inputValue.toLowerCase().includes("celebration") && inputValue.toLowerCase().includes("west")){
@@ -213,13 +212,13 @@ function processSearch(inputValue ) {
 			$("#purchaseTickets").modal('show');
 		$("#selectMyTheater").val("Celebration Cinema West");
 		
-	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("country")){
+	}else if(inputValue.toLowerCase().includes("cinema") && inputValue.toLowerCase().includes("grand")){
 		addToSpeechLog(inputValue, "great - Location Country.", false);
 			$("#purchaseTickets").modal('show');
-		$("#selectMyTheater").val("Country Cinema");
+		$("#selectMyTheater").val("Grand Rapids Cinema 8");
 		
-	}else if(inputValue.toLowerCase().includes("acm") && inputValue.toLowerCase().includes("18")){
-		addToSpeechLog(inputValue, "great - Location ACM.", false);
+	}else if(inputValue.toLowerCase().includes("amc") && inputValue.toLowerCase().includes("18")){
+		addToSpeechLog(inputValue, "great - Location AMC.", false);
 			$("#purchaseTickets").modal('show');
 		$("#selectMyTheater").val("AMC Grand Rapids 18");
 		
@@ -228,7 +227,7 @@ function processSearch(inputValue ) {
 	//select a theater page
 	else if (inputValue.toLowerCase().includes("theater")){
 		addToSpeechLog(inputValue, "Showing Selct a theater page.", false);
-			$("#selectLocation").modal('show');
+		$("#selectLocation").modal('show');
 	}
 	else if (( inputValue.toLowerCase().includes("buy") || (inputValue.toLowerCase().includes("purchase")  )&& inputValue.toLowerCase().includes("tickets") )){
 		addToSpeechLog(inputValue, "Showing Selct a theater page.", false);
