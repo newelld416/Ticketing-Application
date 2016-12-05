@@ -26,7 +26,7 @@ $('.movieSelection').on('hidden.bs.modal', function (e) {
 });
 
 function startListening(event) {
-
+	
 	if (!('webkitSpeechRecognition' in window)) {
 	  alert("Your browser does not support Speach Recognition.  Please try using Google Chrome 25 or later.")
 	} else {

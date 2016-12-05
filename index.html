@@ -464,7 +464,7 @@
 								<hr class="star-primary">
 								<img src="img/movie_locations/cbs.jfif" class="img-responsive img-centered" style = "max-height: 200px"   alt="">
 								<button type="button" class="btn btn-primary" style="margin-right: 10px" data-dismiss="modal" onclick="window.open('https://www.google.com/maps/dir//Celebration!+Cinema+Grand+Rapids+North+%26+IMAX,+Celebration+Drive+Northeast,+Grand+Rapids,+MI/@43.0017427,-85.6283373,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x8818534feb598dc3:0x69b4518c7380686c!2m2!1d-85.593318!2d43.001748')"></i>Directions</button>
-								<button type="button" class="btn btn-success" onclick="processSearch('Celebration Cinema North');"><i>Purchase Tickets<</i>/button>
+								<button type="button" class="btn btn-success" onclick="processSearch('Celebration Cinema North');"><i>Purchase Tickets</i></button>
 							</section>
 						</div>
 						<div class="row">
@@ -505,6 +505,25 @@
                         <h2>Purchase Tickets</h2>
                         <hr class="star-primary">
                         <div style="border: 5px solid #18BC9C; padding: 20px; margin-bottom: 50px;">
+                            <p style="color: #333333;"><strong>Personal Information</strong></p>
+                            <div class="input-group" style="margin-bottom: 10px">
+                                <input id="searchInput" type="text" class="form-control" placeholder="Name">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" id="speechButton" type="button">
+                                        <i class="fa fa-microphone"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="input-group">
+                                <input id="searchInput" type="text" class="form-control" placeholder="Email">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" id="speechButton" type="button">
+                                        <i class="fa fa-microphone"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div style="border: 5px solid #18BC9C; padding: 20px; margin-bottom: 50px;">
                             <p style="color: #333333;"><strong>Ticket Information</strong></p>
                             <select class="form-control" style="margin-bottom:10px;" id = 'selectMyTickets'>
                                 <option>Select Movie</option>
@@ -533,25 +552,6 @@
                                     <option>6:00 PM </option>
                                     <option>9:00 PM </option>
                             </select>
-                        </div>
-                        <div style="border: 5px solid #18BC9C; padding: 20px; margin-bottom: 50px;">
-                            <p style="color: #333333;"><strong>Personal Information</strong></p>
-                            <div class="input-group" style="margin-bottom: 10px">
-                                <input id="searchInput" type="text" class="form-control" placeholder="Name">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" id="speechButton" type="button">
-                                        <i class="fa fa-microphone"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <div class="input-group">
-                                <input id="searchInput" type="text" class="form-control" placeholder="Email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" id="speechButton" type="button">
-                                        <i class="fa fa-microphone"></i>
-                                    </button>
-                                </span>
-                            </div>
                         </div>
                         <div style="border: 5px solid #18BC9C; padding: 20px; margin-bottom: 50px;">
                             <p style="color: #333333;"><strong>Billing Information</strong></p>
@@ -659,8 +659,12 @@
                         <div class="modal-body">
                             <hr class="star-primary">
                             <h2>You have successfully purchased your tickets</h2>
+                            <h3>Your tickets will be emailed to the address you provided</h3>
                             <hr class="star-primary">
                         </div>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <button class="btn btn-lg btn-primary" type="button" onClick="window.location.reload()" data-toggle="modal">Purchase More Tickets</button>
                     </div>
                 </div>
             </div>
